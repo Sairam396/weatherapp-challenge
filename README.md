@@ -29,5 +29,17 @@ It uses the **OpenWeather** API to fetch current weather based on latitude/longi
 
   
 ## Project Setup
-Clone the repository:
+1) Clone the repository:
 git clone https://github.com/<YOUR_GITHUB_USERNAME>/weatherapp-challenge.git
+
+2) Add your OpenWeather API key
+Create/update this file:
+local.properties (project root):
+sdk.dir=/Users/<your_user>/Library/Android/sdk
+OPEN_WEATHER_API_KEY=YOUR_API_KEY_HERE
+
+## Screenshot
+
+[Weather - San Jose]
+
+<img width="1080" height="2280" alt="image" src="https://github.com/user-attachments/assets/82ed98d3-4cc1-4bfa-ad6d-dfe44e1d7884" />
