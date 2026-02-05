@@ -18,6 +18,7 @@ It uses the **OpenWeather** API to fetch current weather based on latitude/longi
 - **Jetpack Compose** (Material 3)
 - **Navigation Compose**
 - **Coroutines**
+- **Kotlin Flows**
 - **Retrofit + OkHttp**
 - **Kotlinx Serialization**
 - **Hilt (DI)**
@@ -32,9 +33,10 @@ It uses the **OpenWeather** API to fetch current weather based on latitude/longi
 git clone https://github.com/<YOUR_GITHUB_USERNAME>/weatherapp-challenge.git
 
 2) Add your OpenWeather API key
-Create/update this file:
-local.properties (project root):
+Create/update this file: local.properties (project root):
+
 sdk.dir=/Users/<your_user>/Library/Android/sdk
+
 OPEN_WEATHER_API_KEY=YOUR_API_KEY_HERE
 
 ## Screenshot
@@ -49,7 +51,7 @@ Using Search by City name:
 <img width="1008" height="2244" alt="image" src="https://github.com/user-attachments/assets/57011737-a211-490c-ad8c-fe9425bd1629" />
 
 
-## Sample Run (Logcat)
+## Sample logs captured from local device (Logcat)
 
 Logs show: city -> geocode (lat/lon) -> weather fetch success + icon + temp, for two different inputs (case-insensitive).
 
