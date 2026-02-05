@@ -31,4 +31,3 @@ It uses the **OpenWeather** API to fetch current weather based on latitude/longi
 ## Project Setup
 Clone the repository:
 git clone https://github.com/<YOUR_GITHUB_USERNAME>/weatherapp-challenge.git
-cd weatherapp-challenge
