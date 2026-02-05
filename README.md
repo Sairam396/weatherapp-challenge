@@ -7,7 +7,7 @@ It uses the **OpenWeather** API to fetch current weather based on latitude/longi
 - Jetpack Compose UI
 - Search screen (basic UI + input)
 - Weather details screen (current conditions)
-- Loading / error states
+- Loading/error states
 - Network layer with Retrofit + OkHttp
 - Dependency Injection with Hilt
 - Kotlinx Serialization for JSON parsing
@@ -27,7 +27,6 @@ It uses the **OpenWeather** API to fetch current weather based on latitude/longi
 - OpenWeather Current Weather API  
   Example: https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid={API_Key}
 
-  
 ## Project Setup
 1) Clone the repository:
 git clone https://github.com/<YOUR_GITHUB_USERNAME>/weatherapp-challenge.git
@@ -40,9 +39,14 @@ OPEN_WEATHER_API_KEY=YOUR_API_KEY_HERE
 
 ## Screenshot
 
+Verified on Pixel 9 Pro XL:
+Use Location (current location):
+<img width="1008" height="2244" alt="image" src="https://github.com/user-attachments/assets/87dd1099-20fb-4e15-9e46-8465c7e40a03" />
+
+Using Search by City name:
 [Weather - San Jose]
 
-<img width="1080" height="2280" alt="image" src="https://github.com/user-attachments/assets/82ed98d3-4cc1-4bfa-ad6d-dfe44e1d7884" />
+<img width="1008" height="2244" alt="image" src="https://github.com/user-attachments/assets/57011737-a211-490c-ad8c-fe9425bd1629" />
 
 
 ## Sample Run (Logcat)
@@ -66,5 +70,6 @@ Logs show: city -> geocode (lat/lon) -> weather fetch success + icon + temp, for
 2026-02-05 14:20:58.953 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Picked: Livermore, state=California, country=US, lat=37.6820583, lon=-121.768053
 
 2026-02-05 14:20:58.953 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Saved last city="LIVERMORE"
+
 2026-02-05 14:20:59.003 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Weather success city=Livermore, tempF=67.42, icon=50d
 
