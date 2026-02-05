@@ -43,3 +43,21 @@ OPEN_WEATHER_API_KEY=YOUR_API_KEY_HERE
 [Weather - San Jose]
 
 <img width="1080" height="2280" alt="image" src="https://github.com/user-attachments/assets/82ed98d3-4cc1-4bfa-ad6d-dfe44e1d7884" />
+
+
+## Sample Run (Logcat)
+
+“Logs show: city -> geocode (lat/lon) -> weather fetch success + icon + temp, for two different inputs (case-insensitive).”
+
+2026-02-05 14:20:18.742 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Geocoding city="Fremont" -> query="Fremont,US"
+2026-02-05 14:20:19.053 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Geocode results size=5
+2026-02-05 14:20:19.054 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Picked: Fremont, state=California, country=US, lat=37.5482697, lon=-121.988571
+2026-02-05 14:20:19.054 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Saved last city="Fremont"
+2026-02-05 14:20:19.109 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Weather success city=Fremont, tempF=70.84, icon=01d
+
+2026-02-05 14:20:58.762 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Geocoding city="LIVERMORE" -> query="LIVERMORE,US"
+2026-02-05 14:20:58.952 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Geocode results size=5
+2026-02-05 14:20:58.953 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Picked: Livermore, state=California, country=US, lat=37.6820583, lon=-121.768053
+2026-02-05 14:20:58.953 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Saved last city="LIVERMORE"
+2026-02-05 14:20:59.003 12935-12935 WeatherApp              com.example.weatherapp               I  Repo: Weather success city=Livermore, tempF=67.42, icon=50d
+
