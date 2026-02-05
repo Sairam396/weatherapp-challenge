@@ -1,7 +1,32 @@
 # WeatherApp Challenge (Android)
 
-A simple Weather app built with **Kotlin + Jetpack Compose**, following a clean MVVM-style structure.
-It uses the **OpenWeather** API to fetch current weather based on latitude/longitude.
+A simple Weather app built with **Kotlin + Jetpack Compose** that supports:
+- Search weather by **US city name**
+- Fetch weather using **device location** (with graceful fallback)
+- Clean architecture with **MVVM + Repository + Hilt DI**
+- Defensive handling for common edge cases (missing API key, permission denied, network errors, ambiguous city results)
+
+## Screenshot
+
+Verified on Pixel 9 Pro XL:
+## Use Location (current location):
+<img width="1008" height="2244" alt="image" src="https://github.com/user-attachments/assets/87dd1099-20fb-4e15-9e46-8465c7e40a03" />
+
+### City Search
+[Weather - San Jose]
+
+<img width="1008" height="2244" alt="image" src="https://github.com/user-attachments/assets/57011737-a211-490c-ad8c-fe9425bd1629" />
+
+## Project Structure (High level)
+This project is organized with clear separation of concerns:
+
+- **UI (Compose screens)**: renders state, sends user actions
+- **ViewModel**: owns UI state, triggers use-cases/repository calls
+- **Repository**: data (geocode + weather + prefs)
+- **Data sources**
+  - Remote (OpenWeather endpoints)
+  - Location provider (Android location)
+  - Local storage (last searched city)
 
 ## Features
 - Jetpack Compose UI
@@ -39,16 +64,25 @@ sdk.dir=/Users/<your_user>/Library/Android/sdk
 
 OPEN_WEATHER_API_KEY=YOUR_API_KEY_HERE
 
-## Screenshot
 
-Verified on Pixel 9 Pro XL:
-Use Location (current location):
-<img width="1008" height="2244" alt="image" src="https://github.com/user-attachments/assets/87dd1099-20fb-4e15-9e46-8465c7e40a03" />
+## Edge Cases Handled (Defensive Coding)
+- **Empty city input** -> prevents search / shows a validation error
+- **City not found / invalid** -> shows an error state/message
+- **Multiple geocode results** ->  selects the best US match deterministically
+- **No network / API error** -> shows an error state/message (no crash)
+- **Location permission denied / unavailable** -> shows message + falls back to last searched city
+- **Missing API key** -> fails fast with a clear exception (prevents silent 401 errors)
 
-Using Search by City name:
-[Weather - San Jose]
+## Location Usage Notes
+The **Use Location** flow requires:
+- **Location permission** granted at runtime
+- **Location services** enabled on the device/emulator
+- Emulator has a **set location**: Extended Controls -> Location -> Send
 
-<img width="1008" height="2244" alt="image" src="https://github.com/user-attachments/assets/57011737-a211-490c-ad8c-fe9425bd1629" />
+### Graceful fallback
+If location cannot be obtained (permission denied, services disabled, emulator missing fix):
+- The app shows a message (example: **“Could not get location. Loading last searched city.”**)
+- Falls back to the **last searched city** (if available)
 
 
 ## Sample logs captured from local device (Logcat)
