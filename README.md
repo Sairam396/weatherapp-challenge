@@ -6,6 +6,9 @@ A simple Weather app built with **Kotlin + Jetpack Compose** that supports:
 - Clean architecture with **MVVM + Repository + Hilt DI**
 - Defensive handling for common edge cases (missing API key, permission denied, network errors, ambiguous city results)
 
+State management: Uses Compose state (mutableStateOf) in the ViewModel. 
+Flow/StateFlow wasn't necessary for this app, but can be introduced if the app grows (eg: multi-screen navigation, DB observation, reactive streams).
+
 ## Screenshot
 
 Verified on Pixel 9 Pro XL:
@@ -31,7 +34,7 @@ This project is organized with clear separation of concerns:
 ## Features
 - Jetpack Compose UI
 - Search screen (basic UI + input)
-- Weather details screen (current conditions)
+- Weather results section (current conditions card)
 - Loading/error states
 - Network layer with Retrofit + OkHttp
 - Dependency Injection with Hilt
@@ -42,8 +45,8 @@ This project is organized with clear separation of concerns:
 - **Kotlin**
 - **Jetpack Compose** (Material 3)
 - **Navigation Compose**
-- **Coroutines**
-- **Kotlin Flows**
+- **Coroutines(viewModelScope)**
+- **Compose state(mutableStateOf)**
 - **Retrofit + OkHttp**
 - **Kotlinx Serialization**
 - **Hilt (DI)**
