@@ -1,4 +1,4 @@
-# WeatherApp Challenge (Android)
+# WeatherApp (Android)
 
 A simple Weather app built with **Kotlin + Jetpack Compose** that supports:
 - Search weather by **US city name**
